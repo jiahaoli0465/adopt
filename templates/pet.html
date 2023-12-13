@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/pet.css">
+<link rel="stylesheet" href="/static/postit.css">
+<div id="petPage">
+
+
+
+    <div id="petProfile" data-id="{{pet.id}}">
+
+        <div id="petHeader">
+            <div id="profileImg">
+                <img src="{{pet.image_url()}}" alt="">
+            </div>
+            <h2>{{pet.name}}</h2>
+
+
+            <div id="btns">
+                <button id="edit">edit</button>
+                <button id="delete" onclick="remove('{{pet.id}}')">remove</button>
+            </div>
+        </div>
+        <div id="petContent">
+            <div class="status {% if pet.available %}petAvailable{% else %}petUn{% endif %}" >
+                {%if pet.available %}
+                    <p class="available">{{pet.name}} is available!</p>
+                {% else %}
+                    <p class="unavailable">{{pet.name}} is currently unavailable</p>
+                {% endif %}
+
+            </div>
+
+
+
+            <div class='post-it details'>
+                <h1>Details...</h1>
+              <ul>
+                <li>Species: {{pet.species}}</li>
+                <li>Age: {% if pet.age%}{{pet.age}}{% else %}?{% endif %}</li>
+
+              </ul>
+                  
+            </div>
+
+        </div>
+
+        <div id="petContent">
+
+            <div class='post-it notes'>
+                <h1>     Notes?</h1>
+              <ul>
+                <li>{{pet.notes}}</li>
+                
+
+              </ul>
+                  
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+    const editBtn = document.querySelector("#edit");
+
+    const id = document.querySelector('#petProfile').getAttribute('data-id')
+    editBtn.addEventListener('click', function(){
+        window.location.href = `/${id}/edit`;
+    })
+
+
+    function remove(id) {
+        if (confirm("Are you sure you want to delete this pet?")) {
+            axios.post(`/${id}/delete`)
+
+                .then(function (response) {
+                    console.log(response);
+                    window.location.href = "/"; // Redirect or update UI as needed
+                })
+                .catch(function (error) {
+                    console.error('Error:', error);
+                });
+        }
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/petForms.css">
+
+<div id="formPage">
+
+
+
+
+    <div id="formDiv" class="edit" >
+        <form method="POST" autocomplete="off">
+            <h1>Edit {{pet.name}}</h1>
+            {{ form.hidden_tag() }}
+            {% for field in form if field.widget.input_type != 'hidden'%}
+                {{ field.label }} 
+                {{ field(class="formField") }} 
+                {% if field.errors %}
+                    {% for error in field.errors %} 
+                        {{ error }} 
+                    {% endfor %} 
+                {% endif %}
+            {% endfor %}
+            
+
+
+
+        <button class="" type="submit">change</button>
+        </form>
+
+    </div>
+</div>
+{% endblock %}

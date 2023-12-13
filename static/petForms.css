@@ -1,0 +1,156 @@
+#formPage {
+    width: 100vw;
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#formPage form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+#formDiv {
+    width: 450px;
+    height: 700px;
+    background-color: rgb(180, 208, 232);
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    gap: 5px;
+    margin: 20px;
+    padding-bottom: 15px;
+
+}
+
+#formDiv h1 {
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+
+#formDiv form{
+    width: 80%;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    
+
+}
+
+#formDiv label {
+    font-weight: bold;
+}
+
+#formDiv input {
+    width: 100%; 
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+
+    border: 1px solid rgb(163, 172, 207);
+    border-radius: 12px;
+}
+
+
+
+#formDiv input:focus {
+    border-color: #4a7ae2; 
+    outline: none;
+}
+
+#formDiv textarea {
+    width: 100%;
+    height: 150px; /* Increased height */
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+
+    border: 1px solid rgb(163, 172, 207);
+    border-radius: 12px;
+    display: block; /* Changed from flex to block */
+
+    resize: vertical; /* Optional: Allows vertical resizing */
+    overflow: auto; 
+}
+
+#formDiv select {
+    width: 100%; 
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+
+    border: 1px solid rgb(163, 172, 207);
+    border-radius: 12px;
+}
+
+
+
+
+
+
+
+#formDiv button {
+    background-color: #6473a6; 
+    color: white;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
+    /* transform: translateY(10px); */
+}
+
+#formDiv button:hover {
+    background-color: #355bbd; 
+}
+
+.formField[type="checkbox"] {
+    /* Hide the default checkbox */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #95a1ba;
+    width: 20px;
+    height: 20px;
+    max-width: 40px;
+    max-height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    position: relative; /* Required for pseudo-elements */
+}
+
+
+.formField[type="checkbox"]:checked {
+    background-color: #2196F3;
+    border-color: #2196F3;
+}
+
+
+.formField[type="checkbox"]::after {
+    content: "\2713"; 
+    font-size: 16px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; 
+}
+
+
+.formField[type="checkbox"]:checked::after {
+    display: block;
+}
+#formPage .edit {
+    height: 550px;
+}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/home.css">
+
+<div id="homeDiv">
+
+    <div id="allPets">
+    
+    {% for pet in pets %}
+        <div class="pet" data-id="{{pet.id}}">
+            <h2>{{pet.name}}</h2>
+            <div class="image">
+                <img src="{{pet.image_url()}}" alt="">
+            </div>
+            {%if pet.available %}
+                <p class="available">Available!</p>
+            {% else %}
+                <p class="unavailable">Unavailable</p>
+            {% endif %}
+
+        </div>
+
+    {% endfor %}
+
+
+    </div>
+
+
+
+
+</div>
+
+
+<script>
+    const pets = document.querySelectorAll('.pet')
+    pets.forEach((pet)=>{
+        const id = pet.getAttribute('data-id');
+        pet.addEventListener('click', function(){
+            window.location.href = `/${id}`
+        })
+    })
+</script>
+
+
+{% endblock %}
