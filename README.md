@@ -3,6 +3,10 @@
 ## Overview
 This Pet Adoption Agency application is a web-based platform designed to manage pet adoptions. It allows users to view available pets, add new pets, edit pet details, and delete pets.
 
+
+https://github.com/jiahaoli0465/adopt/assets/144624616/87e80b73-db0e-4194-a014-49ec9266e068
+
+
 ## Key Features
 - **View Pets**: Browse through a list of available pets.
 - **Pet Profile**: Great profile design.
