@@ -85,7 +85,7 @@ Then, navigate to the adress given from your terminal in your browser to use Fla
 
 ## License
 
-Flask Blogly is released under the MIT License. See the [LICENSE](LICENSE.md) file for more details.
+Adopt is released under the MIT License. See the [LICENSE](LICENSE.md) file for more details.
 
 ## Contact
 
