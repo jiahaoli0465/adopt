@@ -5,7 +5,11 @@ This Pet Adoption Agency application is a web-based platform designed to manage 
 Fun fact: Dalle was used to generate the profile header image
 
 
-https://github.com/jiahaoli0465/adopt/assets/144624616/87e80b73-db0e-4194-a014-49ec9266e068
+
+
+https://github.com/jiahaoli0465/adopt/assets/144624616/bcfa43d7-c957-4f6f-8821-6191bd753543
+
+
 
 
 ## Key Features
